@@ -8,17 +8,36 @@
 
 import SwiftUI
 
+enum Mode {
+    case flashCard, quiz
+}
+
 struct ContentView: View {
     
     @ObservedObject var quiz = ElementViewModel()
     
+    @State var mode: Mode = .flashCard
+    @State var textField: String = ""
+    
     var body: some View {
         VStack(spacing: 30.0) {
+            
+            Picker(selection: $mode, label: Text("Mode")) {
+                Text("Flash Card").tag(Mode.flashCard)
+                Text("Quiz").tag(Mode.quiz)
+            }
+            .frame(width: 200.0)
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.bottom)
+            
             ElementTagView(element: quiz.currentElement)
             
             Text(quiz.answer)
                 .fontWeight(.bold)
                 .font(.system(size: 24.0))
+            
+            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 140.0)
             
             HStack(spacing: 50.0) {
                 Button(action: quiz.showAnswer) {
@@ -28,7 +47,10 @@ struct ContentView: View {
                     Text("Next Element")
                 }
             }
+            
+            Spacer()
         }
+        .padding()
     }
 }
 
