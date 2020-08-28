@@ -12,8 +12,6 @@ struct ContentView: View {
     
     @ObservedObject var quiz = ElementViewModel()
     
-    @State var answer: String = "?"
-    
     var body: some View {
         VStack(spacing: 30.0) {
             VStack(spacing: -10.0) {
@@ -29,12 +27,12 @@ struct ContentView: View {
             .foregroundColor(Color(.systemGray6))
             .background(Color(quiz.currentElement.color))
             
-            Text(answer)
+            Text(quiz.answer)
                 .fontWeight(.bold)
                 .font(.system(size: 24.0))
             
             HStack(spacing: 50.0) {
-                Button(action: showAnswer) {
+                Button(action: quiz.showAnswer) {
                     Text("Show Answer")
                 }
                 Button(action: quiz.nextElement) {
@@ -42,10 +40,6 @@ struct ContentView: View {
                 }
             }
         }
-    }
-    
-    func showAnswer() {
-        answer = quiz.currentElement.name
     }
 }
 

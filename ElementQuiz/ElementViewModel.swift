@@ -9,21 +9,30 @@
 import SwiftUI
 
 class ElementViewModel: ObservableObject {
+    
     let elementList: [Element] = [
         Element(id: "C", number: 6, color: .systemGreen, name: "Carbon"),
         Element(id: "Cl", number: 17, color: .systemPurple, name: "Chlorine"),
         Element(id: "Na", number: 11, color: .systemRed, name: "Sodium")
     ]
     
-    @Published var currentElementIndex: Int = 0
+    var currentElementIndex: Int = 0
     
     var currentElement: Element {
         elementList[currentElementIndex]
     }
     
+    @Published var answer: String = "?"
+    
+    func showAnswer() {
+        answer = currentElement.name
+    }
+    
     func nextElement() {
-        if currentElementIndex < elementList.count - 1 {
-            currentElementIndex += 1
+        currentElementIndex += 1
+        if currentElementIndex >= elementList.count {
+            currentElementIndex = 0
         }
+        answer = "?"
     }
 }
