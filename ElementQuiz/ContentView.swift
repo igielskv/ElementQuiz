@@ -14,18 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 30.0) {
-            VStack(spacing: -10.0) {
-                Text(quiz.currentElement.id)
-                    .fontWeight(.semibold)
-                    .font(.system(size: 80.0))
-                    .padding(.top, -10.0)
-                Text("\(quiz.currentElement.number)")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 30.0))
-            }
-            .frame(width: 140.0, height: 140.0)
-            .foregroundColor(Color(.systemGray6))
-            .background(Color(quiz.currentElement.color))
+            ElementTagView(element: quiz.currentElement)
             
             Text(quiz.answer)
                 .fontWeight(.bold)

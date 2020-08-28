@@ -16,7 +16,7 @@ class ElementViewModel: ObservableObject {
         Element(id: "Na", number: 11, color: .systemRed, name: "Sodium")
     ]
     
-    var currentElementIndex: Int = 0
+    private var currentElementIndex: Int = 0
     
     var currentElement: Element {
         elementList[currentElementIndex]

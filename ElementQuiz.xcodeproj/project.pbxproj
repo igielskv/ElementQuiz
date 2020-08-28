@@ -15,6 +15,7 @@
 		9F21EE6824F5ABA900F3805D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F21EE6624F5ABA900F3805D /* LaunchScreen.storyboard */; };
 		9F2C99C224F6E8A400E05D04 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C99C124F6E8A400E05D04 /* Element.swift */; };
 		9F2C99C424F6EC2200E05D04 /* ElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C99C324F6EC2200E05D04 /* ElementViewModel.swift */; };
+		9FC3CB7224F8D69E0090A49E /* ElementTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9F21EE6924F5ABA900F3805D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2C99C124F6E8A400E05D04 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		9F2C99C324F6EC2200E05D04 /* ElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementViewModel.swift; sourceTree = "<group>"; };
+		9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9F21EE5B24F5ABA800F3805D /* AppDelegate.swift */,
 				9F21EE5D24F5ABA800F3805D /* SceneDelegate.swift */,
 				9F21EE5F24F5ABA800F3805D /* ContentView.swift */,
+				9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */,
 				9F2C99C324F6EC2200E05D04 /* ElementViewModel.swift */,
 				9F2C99C124F6E8A400E05D04 /* Element.swift */,
 				9F21EE6124F5ABA900F3805D /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			files = (
 				9F21EE5C24F5ABA800F3805D /* AppDelegate.swift in Sources */,
 				9F21EE5E24F5ABA800F3805D /* SceneDelegate.swift in Sources */,
+				9FC3CB7224F8D69E0090A49E /* ElementTagView.swift in Sources */,
 				9F2C99C224F6E8A400E05D04 /* Element.swift in Sources */,
 				9F21EE6024F5ABA900F3805D /* ContentView.swift in Sources */,
 				9F2C99C424F6EC2200E05D04 /* ElementViewModel.swift in Sources */,
