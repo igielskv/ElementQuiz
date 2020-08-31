@@ -34,6 +34,7 @@ struct ContentView: View {
             TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $quiz.usersAnswer, onCommit: quiz.checkAnswer)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 140.0)
+                .opacity(quiz.mode == .quiz ? 1 : 0)
             
             HStack(spacing: 50.0) {
                 Button(action: quiz.showAnswer) {

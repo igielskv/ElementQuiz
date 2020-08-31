@@ -29,14 +29,19 @@ class ElementViewModel: ObservableObject {
     
     var mode: Mode {
         didSet {
-            updateAnswer()
+            clearAnswer()
         }
     }
     
     @Published var answer: String
     
-    func updateAnswer() {
-        answer = mode == .flashCard ? "?" : " "
+    func clearAnswer() {
+        if mode == .flashCard {
+            answer = "?"
+        } else {
+            answer = " "
+            usersAnswer = ""
+        }
     }
     
     func showAnswer() {
@@ -49,7 +54,7 @@ class ElementViewModel: ObservableObject {
             currentElementIndex = 0
         }
         
-        updateAnswer()
+        clearAnswer()
     }
     
     var usersAnswer: String = ""
