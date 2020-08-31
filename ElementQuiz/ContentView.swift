@@ -31,7 +31,7 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .font(.system(size: 24.0))
             
-            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $textField)
+            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $quiz.usersAnswer, onCommit: quiz.checkAnswer)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 140.0)
             

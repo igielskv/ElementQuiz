@@ -51,6 +51,18 @@ class ElementViewModel: ObservableObject {
         
         updateAnswer()
     }
+    
+    var usersAnswer: String = ""
+    var correctAnswerCount: Int = 0
+    
+    func checkAnswer() {
+        if usersAnswer.lowercased() == currentElement.name.lowercased() {
+            correctAnswerCount += 1
+            answer = "Correct!"
+        } else {
+            answer = "❌"
+        }
+    }
 }
 
 enum Mode {
