@@ -10,6 +10,11 @@ import SwiftUI
 
 class ElementViewModel: ObservableObject {
     
+    init() {
+        mode = .flashCard
+        answer = "?"
+    }
+    
     let elementList: [Element] = [
         Element(id: "C", number: 6, color: .systemGreen, name: "Carbon"),
         Element(id: "Cl", number: 17, color: .systemPurple, name: "Chlorine"),
@@ -22,7 +27,17 @@ class ElementViewModel: ObservableObject {
         elementList[currentElementIndex]
     }
     
-    @Published var answer: String = "?"
+    var mode: Mode {
+        didSet {
+            updateAnswer()
+        }
+    }
+    
+    @Published var answer: String
+    
+    func updateAnswer() {
+        answer = mode == .flashCard ? "?" : " "
+    }
     
     func showAnswer() {
         answer = currentElement.name
@@ -33,6 +48,11 @@ class ElementViewModel: ObservableObject {
         if currentElementIndex >= elementList.count {
             currentElementIndex = 0
         }
-        answer = "?"
+        
+        updateAnswer()
     }
+}
+
+enum Mode {
+    case flashCard, quiz
 }
