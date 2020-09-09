@@ -38,6 +38,7 @@ class ElementViewModel: ObservableObject {
     func clearAnswer() {
         if mode == .flashCard {
             answer = "?"
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         } else {
             answer = " "
             usersAnswer = ""
