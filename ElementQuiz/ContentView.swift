@@ -48,6 +48,9 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
+        .alert(isPresented: $quiz.showScore) {
+            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: { self.quiz.showScore = false }))
+        }
     }
 }
 

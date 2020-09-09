@@ -33,6 +33,8 @@ class ElementViewModel: ObservableObject {
         }
     }
     
+    @Published var showScore: Bool = false
+    
     @Published var answer: String
     
     func clearAnswer() {
@@ -53,6 +55,9 @@ class ElementViewModel: ObservableObject {
         currentElementIndex += 1
         if currentElementIndex >= elementList.count {
             currentElementIndex = 0
+            if mode == .quiz {
+                showScore = true
+            }
         }
         
         clearAnswer()
