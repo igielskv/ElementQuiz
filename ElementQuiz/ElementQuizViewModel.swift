@@ -59,7 +59,7 @@ class ElementQuizViewModel: ObservableObject {
             correctAnswerCount += 1
             answer = "Correct!"
         } else {
-            answer = "❌"
+            answer = "❌\nCorrect Answer: " + currentElement.name
         }
     }
     

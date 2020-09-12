@@ -23,6 +23,8 @@ struct QuizView: View {
             Text(quiz.answer ?? " ")
                 .fontWeight(.bold)
                 .font(.system(size: 24.0))
+                .multilineTextAlignment(.center)
+                .frame(height: 60.0)
             
             TextField("Your Answer", text: $textFiled, onCommit: submitAnswer)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
