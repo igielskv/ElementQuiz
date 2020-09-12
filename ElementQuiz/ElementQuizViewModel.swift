@@ -20,6 +20,9 @@ class ElementQuizViewModel: ObservableObject {
     
     @Published var currentElement: Element!
     @Published var answer: String?
+    @Published var finished: Bool = false
+    
+    var correctAnswerCount: Int = 0
     
     var usersAnswer: String? {
         didSet {
@@ -36,6 +39,7 @@ class ElementQuizViewModel: ObservableObject {
         
         if currentElementIndex >= elementList.count {
             currentElementIndex = 0
+            finished = true
         }
         
         currentElementUpdate()
@@ -52,9 +56,15 @@ class ElementQuizViewModel: ObservableObject {
     
     func checkAnswer() {
         if usersAnswer?.lowercased().hasPrefix(currentElement.name.lowercased()) == true  {
+            correctAnswerCount += 1
             answer = "Correct!"
         } else {
             answer = "❌"
         }
+    }
+    
+    func reset() {
+        finished = false
+        correctAnswerCount = 0
     }
 }

@@ -28,15 +28,28 @@ struct QuizView: View {
                 .multilineTextAlignment(.center)
                 .frame(width: 140.0)
             
-            Button("Next Element") {
+            Button("Next Question") {
                 self.quiz.nextElement()
-                self.textFiled = ""
+                self.clearTextFiled()
             }
+            .disabled(quiz.answer == nil)
+        }
+        .alert(isPresented: $quiz.finished) {
+            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: scoreDismissed))
         }
     }
     
     func submitAnswer() {
         quiz.usersAnswer = textFiled
+    }
+    
+    func scoreDismissed() {
+        quiz.reset()
+        clearTextFiled()
+    }
+    
+    func clearTextFiled() {
+        textFiled = ""
     }
 }
 
