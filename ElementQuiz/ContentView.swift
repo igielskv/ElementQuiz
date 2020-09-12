@@ -17,13 +17,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 30.0) {
             
-            Picker(selection: $quiz.mode, label: Text("Mode")) {
-                Text("Flash Card").tag(Mode.flashCard)
-                Text("Quiz").tag(Mode.quiz)
-            }
-            .frame(width: 200.0)
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.bottom)
+            ModeSelector(mode: $quiz.mode)
             
             ElementTagView(element: quiz.currentElement)
             
@@ -49,7 +43,7 @@ struct ContentView: View {
         }
         .padding()
         .alert(isPresented: $quiz.showScore) {
-            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: { self.quiz.showScore = false }))
+            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: quiz.dismissScore))
         }
     }
 }
@@ -57,5 +51,20 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct ModeSelector: View {
+    
+    @Binding var mode: Mode
+    
+    var body: some View {
+        Picker(selection: $mode, label: Text("Mode")) {
+            Text("Flash Card").tag(Mode.flashCard)
+            Text("Quiz").tag(Mode.quiz)
+        }
+        .frame(width: 200.0)
+        .pickerStyle(SegmentedPickerStyle())
+        .padding(.bottom)
     }
 }

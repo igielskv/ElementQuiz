@@ -74,6 +74,11 @@ class ElementViewModel: ObservableObject {
             answer = "❌"
         }
     }
+    
+    func dismissScore() {
+        showScore = false
+        mode = .flashCard
+    }
 }
 
 enum Mode {
