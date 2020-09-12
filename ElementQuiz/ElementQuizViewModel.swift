@@ -21,7 +21,11 @@ class ElementQuizViewModel: ObservableObject {
     @Published var currentElement: Element!
     @Published var answer: String?
     
-    var usersAnswer: String?
+    var usersAnswer: String? {
+        didSet {
+            checkAnswer()
+        }
+    }
     
     init() {
         currentElementUpdate()
@@ -44,5 +48,13 @@ class ElementQuizViewModel: ObservableObject {
     
     func showAnswer() {
         answer = currentElement.name
+    }
+    
+    func checkAnswer() {
+        if usersAnswer?.lowercased().hasPrefix(currentElement.name.lowercased()) == true  {
+            answer = "Correct!"
+        } else {
+            answer = "❌"
+        }
     }
 }

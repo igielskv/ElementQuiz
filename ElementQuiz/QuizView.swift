@@ -9,8 +9,34 @@
 import SwiftUI
 
 struct QuizView: View {
+    @ObservedObject var quiz: ElementQuizViewModel = ElementQuizViewModel()
+    
+    @State var textFiled: String = ""
+    
     var body: some View {
-        Text("Quiz Mode")
+        VStack(spacing: 30.0) {
+            Text("Quiz Mode")
+            
+            ElementTagView(element: quiz.currentElement)
+            
+            Text(quiz.answer ?? " ")
+                .fontWeight(.bold)
+                .font(.system(size: 24.0))
+            
+            TextField("Your Answer", text: $textFiled, onCommit: submitAnswer)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .frame(width: 140.0)
+            
+            Button("Next Element") {
+                self.quiz.nextElement()
+                self.textFiled = ""
+            }
+        }
+    }
+    
+    func submitAnswer() {
+        quiz.usersAnswer = textFiled
     }
 }
 
