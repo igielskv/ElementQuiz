@@ -36,7 +36,10 @@ class ElementQuizViewModel: ObservableObject {
         
         if currentElementIndex >= elementList.count {
             currentElementIndex = 0
-            finished = true
+            if usersAnswer != nil {
+                finished = true
+                return
+            }
         }
         
         currentElementUpdate()

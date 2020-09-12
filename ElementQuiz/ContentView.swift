@@ -24,7 +24,7 @@ struct ContentView: View {
             if mode == .flashCard {
                 FlashCardView()
             } else {
-                QuizView()
+                QuizView(mode: $mode)
             }
             
             Spacer()

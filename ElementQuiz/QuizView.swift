@@ -14,6 +14,8 @@ struct QuizView: View {
     @State var textFiled: String = ""
     @State var textFieldDisabled: Bool = false
     
+    @Binding var mode: Mode
+    
     var body: some View {
         VStack(spacing: 30.0) {
             Text("Quiz Mode")
@@ -39,7 +41,7 @@ struct QuizView: View {
             .disabled(quiz.answer == nil)
         }
         .alert(isPresented: $quiz.finished) {
-            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: scoreDismissed))
+            Alert(title: Text("Quiz Score"), message: Text("Your score is \(quiz.correctAnswerCount) out of \(quiz.elementList.count)."), dismissButton: .default(Text("OK"), action: { self.mode = .flashCard }))
         }
     }
     
@@ -61,6 +63,6 @@ struct QuizView: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(mode: .constant(.quiz))
     }
 }
