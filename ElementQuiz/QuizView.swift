@@ -12,6 +12,7 @@ struct QuizView: View {
     @ObservedObject var quiz: ElementQuizViewModel = ElementQuizViewModel()
     
     @State var textFiled: String = ""
+    @State var textFieldDisabled: Bool = false
     
     var body: some View {
         VStack(spacing: 30.0) {
@@ -27,6 +28,7 @@ struct QuizView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(width: 140.0)
+                .disabled(textFieldDisabled)
             
             Button(quiz.currentElementIndex == quiz.elementList.count - 1 ? "Show Score" : "Next Question") {
                 self.quiz.nextElement()
@@ -41,7 +43,7 @@ struct QuizView: View {
     
     func submitAnswer() {
         quiz.usersAnswer = textFiled
-        
+        textFieldDisabled = true
     }
     
     func scoreDismissed() {
@@ -51,6 +53,7 @@ struct QuizView: View {
     
     func clearTextFiled() {
         textFiled = ""
+        textFieldDisabled = false
     }
 }
 
