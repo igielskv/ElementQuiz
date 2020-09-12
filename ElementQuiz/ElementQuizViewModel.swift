@@ -18,7 +18,31 @@ class ElementQuizViewModel: ObservableObject {
     
     private var currentElementIndex: Int = 0
     
-    var currentElement: Element {
-        elementList[currentElementIndex]
+    @Published var currentElement: Element!
+    @Published var answer: String?
+    
+    var usersAnswer: String?
+    
+    init() {
+        currentElementUpdate()
+    }
+    
+    func nextElement() {
+        currentElementIndex += 1
+        
+        if currentElementIndex >= elementList.count {
+            currentElementIndex = 0
+        }
+        
+        currentElementUpdate()
+        answer = nil
+    }
+    
+    func currentElementUpdate() {
+        currentElement = elementList[currentElementIndex]
+    }
+    
+    func showAnswer() {
+        answer = currentElement.name
     }
 }

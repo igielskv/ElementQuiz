@@ -22,9 +22,9 @@ struct ContentView: View {
             ModePicker(mode: $mode)
             
             if mode == .flashCard {
-                Text("Flasch Card Mode")
+                FlashCardView()
             } else {
-                Text("Quiz Mode")
+                QuizView()
             }
             
             Spacer()

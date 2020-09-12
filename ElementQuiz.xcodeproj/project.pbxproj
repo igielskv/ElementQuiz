@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F073921250CF2F8001BA4C8 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F073920250CF2F8001BA4C8 /* FlashCardView.swift */; };
 		9F21EE5C24F5ABA800F3805D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21EE5B24F5ABA800F3805D /* AppDelegate.swift */; };
 		9F21EE5E24F5ABA800F3805D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21EE5D24F5ABA800F3805D /* SceneDelegate.swift */; };
 		9F21EE6224F5ABA900F3805D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F21EE6124F5ABA900F3805D /* Assets.xcassets */; };
@@ -16,9 +17,11 @@
 		9FA67FCF250CD7CE00FE060C /* ElementQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA67FCE250CD7CE00FE060C /* ElementQuizViewModel.swift */; };
 		9FA67FD1250CD8DC00FE060C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA67FD0250CD8DC00FE060C /* ContentView.swift */; };
 		9FC3CB7224F8D69E0090A49E /* ElementTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */; };
+		9FFA1007250D0D7300C8A485 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFA1006250D0D7300C8A485 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F073920250CF2F8001BA4C8 /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		9F21EE5824F5ABA800F3805D /* ElementQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElementQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F21EE5B24F5ABA800F3805D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F21EE5D24F5ABA800F3805D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		9FA67FCE250CD7CE00FE060C /* ElementQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementQuizViewModel.swift; sourceTree = "<group>"; };
 		9FA67FD0250CD8DC00FE060C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTagView.swift; sourceTree = "<group>"; };
+		9FFA1006250D0D7300C8A485 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				9F21EE5B24F5ABA800F3805D /* AppDelegate.swift */,
 				9F21EE5D24F5ABA800F3805D /* SceneDelegate.swift */,
 				9FA67FD0250CD8DC00FE060C /* ContentView.swift */,
+				9F073920250CF2F8001BA4C8 /* FlashCardView.swift */,
+				9FFA1006250D0D7300C8A485 /* QuizView.swift */,
 				9FC3CB7124F8D69E0090A49E /* ElementTagView.swift */,
 				9FA67FCE250CD7CE00FE060C /* ElementQuizViewModel.swift */,
 				9F2C99C124F6E8A400E05D04 /* Element.swift */,
@@ -169,8 +175,10 @@
 			files = (
 				9F21EE5C24F5ABA800F3805D /* AppDelegate.swift in Sources */,
 				9F21EE5E24F5ABA800F3805D /* SceneDelegate.swift in Sources */,
+				9F073921250CF2F8001BA4C8 /* FlashCardView.swift in Sources */,
 				9FA67FD1250CD8DC00FE060C /* ContentView.swift in Sources */,
 				9FC3CB7224F8D69E0090A49E /* ElementTagView.swift in Sources */,
+				9FFA1007250D0D7300C8A485 /* QuizView.swift in Sources */,
 				9FA67FCF250CD7CE00FE060C /* ElementQuizViewModel.swift in Sources */,
 				9F2C99C224F6E8A400E05D04 /* Element.swift in Sources */,
 			);
