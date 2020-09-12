@@ -14,3 +14,10 @@ struct Element {
     let color: UIColor
     let name: String
 }
+
+let fixedElementList: [Element] = [
+    Element(id: "C", number: 6, color: .systemGreen, name: "Carbon"),
+    Element(id: "Au", number: 79, color: .systemYellow, name: "Gold"),
+    Element(id: "Cl", number: 17, color: .systemPurple, name: "Chlorine"),
+    Element(id: "Na", number: 11, color: .systemRed, name: "Sodium")
+]

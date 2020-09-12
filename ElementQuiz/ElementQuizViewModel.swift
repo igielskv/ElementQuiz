@@ -10,11 +10,7 @@ import Foundation
 
 class ElementQuizViewModel: ObservableObject {
     
-    let elementList: [Element] = [
-        Element(id: "C", number: 6, color: .systemGreen, name: "Carbon"),
-        Element(id: "Cl", number: 17, color: .systemPurple, name: "Chlorine"),
-        Element(id: "Na", number: 11, color: .systemRed, name: "Sodium")
-    ]
+    let elementList: [Element]
     
     var currentElementIndex: Int = 0
     
@@ -30,7 +26,8 @@ class ElementQuizViewModel: ObservableObject {
         }
     }
     
-    init() {
+    init(elementList: [Element]) {
+        self.elementList = elementList
         currentElementUpdate()
     }
     

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct QuizView: View {
-    @ObservedObject var quiz: ElementQuizViewModel = ElementQuizViewModel()
+    @ObservedObject var quiz: ElementQuizViewModel = ElementQuizViewModel(elementList: fixedElementList.shuffled())
     
     @State var textFiled: String = ""
     @State var textFieldDisabled: Bool = false

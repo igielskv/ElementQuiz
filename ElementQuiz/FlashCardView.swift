@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct FlashCardView: View {
-    @ObservedObject var flashCards: ElementQuizViewModel = ElementQuizViewModel()
+    @ObservedObject var flashCards: ElementQuizViewModel = ElementQuizViewModel(elementList: fixedElementList)
     
     var body: some View {
         VStack(spacing: 30.0) {
