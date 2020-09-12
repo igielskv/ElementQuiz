@@ -29,6 +29,6 @@ struct ElementTagView: View {
 
 struct ElementTagView_Previews: PreviewProvider {
     static var previews: some View {
-        ElementTagView(element: ElementViewModel().currentElement)
+        ElementTagView(element: ElementQuizViewModel().currentElement)
     }
 }
