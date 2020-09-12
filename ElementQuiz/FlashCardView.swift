@@ -13,8 +13,6 @@ struct FlashCardView: View {
     
     var body: some View {
         VStack(spacing: 30.0) {
-            Text("Flash Card Mode")
-            
             ElementTagView(element: flashCards.currentElement)
             
             Text(flashCards.answer ?? "?")

@@ -18,8 +18,6 @@ struct QuizView: View {
     
     var body: some View {
         VStack(spacing: 30.0) {
-            Text("Quiz Mode")
-            
             ElementTagView(element: quiz.currentElement)
             
             Text(quiz.answer ?? " ")
