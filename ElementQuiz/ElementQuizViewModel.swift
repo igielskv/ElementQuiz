@@ -16,7 +16,7 @@ class ElementQuizViewModel: ObservableObject {
         Element(id: "Na", number: 11, color: .systemRed, name: "Sodium")
     ]
     
-    private var currentElementIndex: Int = 0
+    var currentElementIndex: Int = 0
     
     @Published var currentElement: Element!
     @Published var answer: String?

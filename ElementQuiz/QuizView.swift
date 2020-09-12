@@ -28,7 +28,7 @@ struct QuizView: View {
                 .multilineTextAlignment(.center)
                 .frame(width: 140.0)
             
-            Button("Next Question") {
+            Button(quiz.currentElementIndex == quiz.elementList.count - 1 ? "Show Score" : "Next Question") {
                 self.quiz.nextElement()
                 self.clearTextFiled()
             }
@@ -41,6 +41,7 @@ struct QuizView: View {
     
     func submitAnswer() {
         quiz.usersAnswer = textFiled
+        
     }
     
     func scoreDismissed() {
